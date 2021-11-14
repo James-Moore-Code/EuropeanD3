@@ -69,17 +69,16 @@ This Script Will be moved to a Script.Js File after testing.
          .join("path")
          .attr("fill", "#348C31") // Color Of Country
          .attr("d", d3.geoPath().projection(projection))
-          .on("click", (_, d) => clickHandler(d)) // Click Handling <- We Will try to Use this to display country info.
+         .on("click", (_, d) => clickHandler(d)) // Click Handling <- We Will try to Use this to display country info.
          .style("stroke", "white")// Border Lines
 })
 
-   // Function to Handle Button Click
+   // Function to Handle Map Click
    function clickHandler(d) {
-       if(d.id === "IRL"){
-           window.alert("You have Clicked Ireland");
-       }
-       else{
-           window.alert("The Country you Clicked is " + d.id);
-       }
+        console.log(d);
+
+
+           window.alert("The Country you Clicked is " + d.properties.name);
+
    }
  </script>
